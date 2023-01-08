@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The result</title>
+	<link rel="stylesheet" href="static\hf.css">
+</head>
+<body>
+	<h1>Here are your results:</h1>
+	<h2>You submitted the following data:</h2>
+	<table>
+	<tr><td><p>Letter is : {{ letter }}</p></td></tr>
+<tr><td><p>Phrase is: {{ phrase }} </p></td></tr>
+</table>
+
+	<h3>When <i>{{ phrase }}</i> is searched for <i>{{ letter }}</i>,
+the following results are returned:</h3>
+	<p>Result is:<b> {% for dt in data %} 
+	{{ dt}} 
+{% endfor %} </b></p>
+	<button type="submit"> <a href="{% url 'search4phrase' %}" >Back to Search</a></button>
+</body>
+</html>

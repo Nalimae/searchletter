@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Search4Letters</title>
+	<link rel="stylesheet" href="static/hf.css">
+</head>
+<body>
+	<h1>Welcome to Search4letters on the web</h1>
+	<h2>Use this form to submit a search request</h2>
+<form method="POST" action="validate">
+	{% csrf_token %}
+	<table>
+	<p>	
+<tr><td><label for="id_text_input">Letter Input</label><br>
+<input id="id_text_input" type="text" name=
+"letter_input" value="" placeholder="Enter some letters"></td></tr>
+</p>
+
+<p>
+<tr><td><label for="id_text_input">Phrase Input</label><br>
+<input id="id_text_input" type="text" name=
+"phrase_input" value="" placeholder="Enter some phrase" required></td></tr>
+</p>
+</table>
+<h3>When you're ready, click do it</h3>
+<p>
+<button type="submit" name="button_element" value="Button
+Element">
+<strong>Do it!</strong>
+</button>
+</p>
+</form>
+</body>
+</html>
